@@ -1,6 +1,6 @@
-from lib.event import Event
-from lib.league import League
-from lib.standings import LeagueRulesFFBB
+from .lr.event import Event
+from .lr.league import League
+from .lr.standings import LeagueRulesFFBB
 from typing import List
 import datetime
 

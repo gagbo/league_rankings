@@ -1,5 +1,5 @@
-from ..lib.league import League
-from ..lib.standings import LeagueRulesFFBB
+from ..lr.league import League
+from ..lr.standings import LeagueRulesFFBB
 import datetime
 
 

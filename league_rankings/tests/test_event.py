@@ -1,4 +1,4 @@
-from ..lib.event import Event
+from ..lr.event import Event
 
 
 def test_winner():

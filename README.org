@@ -1,0 +1,28 @@
+#+TITLE: League Rankings
+
+
+* Purpose
+#+BEGIN_QUOTE
+What happens if league/championship stops now ?
+#+END_QUOTE
+
+Small python utility program/library trying to implement various rules to see
+how they affect the rankings in the end.
+
+* Quickstart
+There is a =bin/league_rankings= that uses some data from a /totally randomly
+chosen league/
+
+* Implementation
+I'm trying to follow an event sourcing pattern as I can
+- =Event= is an event, representing a game most of the time. It is immutable and
+  implemented using dataclasses because it's simpler to start
+- =League= is the event store. It currently provides an iterator to get all
+  events in the order they happened. (i.e. adding an event to the =League=
+  actually ensures the list is sorted). The implementation is highly
+  inefficient, please do not try to store more than hundreds of events in a
+  store.
+- =standings.RuleEngine= is the class to inherit from to manipulate how games
+  affect the standings. The implementors will have to write a `compute_event`
+  method with the signature given in type annotations. An example with FFBB
+  rules is also there (2 points per win, 1 point per loss, no draw, no overtime rule)

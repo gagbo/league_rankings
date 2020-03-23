@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+BINPATH=`dirname $0`
+PROJECT="league_rankings"
+python "${BINPATH}/../${PROJECT}/main.py" $@
